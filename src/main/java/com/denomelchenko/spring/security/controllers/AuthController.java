@@ -1,8 +1,8 @@
 package com.denomelchenko.spring.security.controllers;
 
-import com.denomelchenko.spring.security.models.Person;
-import com.denomelchenko.spring.security.serices.PersonService;
-import com.denomelchenko.spring.security.util.PersonValidator;
+import com.denomelchenko.spring.security.models.User;
+import com.denomelchenko.spring.security.serices.UserService;
+import com.denomelchenko.spring.security.util.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,13 +16,13 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
-    private final PersonValidator personValidator;
-    private final PersonService personService;
+    private final UserValidator userValidator;
+    private final UserService userService;
 
     @Autowired
-    public AuthController(PersonValidator personValidator, PersonService personService) {
-        this.personValidator = personValidator;
-        this.personService = personService;
+    public AuthController(UserValidator userValidator, UserService userService) {
+        this.userValidator = userValidator;
+        this.userService = userService;
     }
 
 
@@ -32,17 +32,17 @@ public class AuthController {
     }
 
     @GetMapping("/registration")
-    public String registrationPage(@ModelAttribute Person person) {
+    public String registrationPage(@ModelAttribute User user) {
         return "auth/registration";
     }
 
     @PostMapping("/registration")
-    public String createUser(@ModelAttribute @Valid Person person, BindingResult bindingResult) {
-        personValidator.validate(person, bindingResult);
+    public String createUser(@ModelAttribute @Valid User user, BindingResult bindingResult) {
+        userValidator.validate(user, bindingResult);
         if (bindingResult.hasErrors()) {
             return "/auth/registration";
         }
-        personService.add(person);
+        userService.add(user);
         return "redirect:/auth/login";
     }
 }

@@ -1,16 +1,16 @@
 package com.denomelchenko.spring.security.security;
 
-import com.denomelchenko.spring.security.models.Person;
+import com.denomelchenko.spring.security.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public class PersonDetails implements UserDetails {
-    private final Person person;
+public class UsersDetails implements UserDetails {
+    private final User user;
 
-    public PersonDetails(Person person) {
-        this.person = person;
+    public UsersDetails(User user) {
+        this.user = user;
     }
 
     @Override
@@ -20,12 +20,12 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return person.getPassword();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return person.getUsername();
+        return user.getUsername();
     }
 
     @Override

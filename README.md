@@ -16,41 +16,41 @@ To get started with the application, follow these steps:
 
 1. Clone the repository:
 
-   \`\`\`bash
+   ```bash
    git clone https://github.com/denomelchenko/spring-security-app.git
-   \`\`\`
+   ```
 
 2. Navigate to the project directory:
 
-   \`\`\`bash
+   ```bash
    cd simple-spring-security-app
-   \`\`\`
+   ```
 
 3. Build the application using Maven:
 
-   \`\`\`bash
+   ```bash
    mvn clean install
-   \`\`\`
+   ```
 
 4. Run the application:
 
-   \`\`\`bash
+   ```bash
    mvn spring-boot:run
-   \`\`\`
+   ```
 
-   The application will start running on \`http://localhost:8080\`.
+   The application will start running on `http://localhost:8080`.
 
 ## Usage
 
 ### Sign Up
 
-1. Open your web browser and go to \`http://localhost:8080/auth/register`.
+1. Open your web browser and go to `http://localhost:8080/auth/register`.
 2. Fill out the sign-up form with your desired username and password.
 3. Click the "Sign Up" button.
 
 ### Login
 
-1. Open your web browser and go to http://localhost:8080/auth/login` or any other page.
+1. Open your web browser and go to `http://localhost:8080/auth/login` or any other page.
 2. Enter your username and password.
 3. Click the "Log In" button.
 
@@ -58,6 +58,14 @@ To get started with the application, follow these steps:
 
 1. To log out, click the "Logout" link in the navigation bar.
 2. You will be redirected to the login page.
+
+## Technologies Used
+* Spring
+* Hibernate
+* Java Persistence API
+* Validation of items
+* MySQL - Relational database management system
+* Maven - Build and dependency management tool
 
 ## License
 

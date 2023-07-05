@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Person")
-public class Person {
+public class User {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,9 +23,10 @@ public class Person {
     private int yearOfBirth;
 
     @Column(name = "password")
+    @Min(value = 8, message = "Password should be bigger than 8")
     private String password;
 
-    public Person() {
+    public User() {
     }
 
     public String getUsername() {
